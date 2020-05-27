@@ -6,7 +6,7 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route('/')
+@app.route('/api/v1/admin')
 def get_temperature():
     temperature_c = random.randint(-10, 33)
     return { 'temperature_c': temperature_c }
