@@ -1,5 +1,8 @@
 # Minimal nginx reverse proxy demo
 
+## Youtube
+https://www.youtube.com/watch?v=hxngRDmHTM0
+
 This repository contains a `docker-compose` orchestrated application with Flask and Vue services running behind an nginx reverse proxy.
 
 ## Warning
