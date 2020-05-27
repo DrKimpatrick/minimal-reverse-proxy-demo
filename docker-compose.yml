@@ -1,15 +1,14 @@
-version: '3'
+version: "3"
 
 services:
-
   # Proxies requests to internal services
   reverse-proxy:
     image: nginx:1.17.10
     container_name: reverse_proxy_demo
     depends_on:
-        - weather-report
-        - temperature-service
-        - precip-service
+      - weather-report
+      - temperature-service
+      - precip-service
     volumes:
       - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
     ports:
@@ -22,12 +21,11 @@ services:
     build:
       context: ./weather_report
     depends_on:
-        - temperature-service
-        - precip-service
+      - temperature-service
+      - precip-service
     ports:
       - 8080:80
     restart: on-failure
-
 
   # Retrieves the temperature
   temperature-service:
@@ -38,7 +36,6 @@ services:
     ports:
       - 5001:5001
     restart: on-failure
-
 
   # Generates a precipitation estimate
   precip-service:
